@@ -9,7 +9,6 @@ const SearchTool = () => {
   const [regionCode, setRegionCode] = useState("IN");
 
   const API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY; // get API-key from .env file
-  console.log(API_KEY);
   const DEBOUNCE_DELAY = 1000; // 1 sec
 
   useEffect(() => {
@@ -47,7 +46,7 @@ const SearchTool = () => {
 
       setError(err.message); // if error came setting error
       setSearchVolume("not found");// setting searchVolume as "not found" or ""
-      console.log(error);
+      // console.log(error);
     } finally {
       setLoading(false);  
     }
