@@ -22,6 +22,11 @@ const SearchTool = () => {
   }, [keyword, regionCode]); 
 
   const fetchSearchVolume = async () => {
+    if (!keyword.trim()) {
+      // If keyword is empty or only whitespace
+      setError('Please enter a keyword');
+      return;
+    }
     setLoading(true); // will be true until data get loaded
     try {
 
